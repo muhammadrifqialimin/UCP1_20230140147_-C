@@ -4,7 +4,225 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fitur - Sejajar</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #f9f6f2, #d7ccc8);
+        color: #4a3f3f;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Header & Navigation */
+      header {
+        background-color: #6b4f4f;
+        padding: 15px 30px;
+        box-shadow: 0 4px 8px rgba(107, 79, 79, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+
+      .navbar {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #f9f6f2;
+        font-weight: 700;
+        font-size: 1.8rem;
+        font-family: "Georgia", serif;
+        cursor: pointer;
+      }
+
+      .logo img {
+        height: 40px;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-links li a {
+        color: #f9f6f2;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 6px 12px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+      }
+
+      .nav-links li a:hover,
+      .nav-links li a.active {
+        background-color: #a67b5b;
+        color: #fff;
+      }
+
+      /* Main Content */
+      main {
+        max-width: 1100px;
+        margin: 40px auto 60px;
+        padding: 0 20px;
+        flex-grow: 1;
+      }
+
+      main h2 {
+        text-align: center;
+        margin: 30px 0;
+        font-family: "Georgia", serif;
+        color: #6b4f4f;
+        font-size: 2.2rem;
+      }
+
+      /* Features Gallery */
+      .features-gallery {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 40px 0 60px;
+      }
+
+      .feature-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(107, 79, 79, 0.15);
+        width: 280px;
+        text-align: center;
+        padding: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .feature-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 15px;
+      }
+
+      .feature-card p {
+        font-weight: 600;
+        font-size: 1rem;
+        color: #6b4f4f;
+      }
+
+      /* Video Container */
+      .video-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 60px 0;
+        padding: 30px;
+        background-color: #f7f2e7;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(107, 79, 79, 0.15);
+      }
+
+      .video-container h2 {
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+      }
+
+      .video-wrapper {
+        position: relative;
+        width: 90%;
+        max-width: 720px;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        margin-bottom: 15px;
+      }
+
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        border: none;
+      }
+
+      .video-alternative {
+        font-size: 1rem;
+        color: #6b4f4f;
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .video-alternative a {
+        color: #a67b5b;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .video-alternative a:hover {
+        color: #6b4f4f;
+        text-decoration: underline;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #6b4f4f;
+        color: #f9f6f2;
+        text-align: center;
+        padding: 15px 10px;
+        font-size: 0.9rem;
+        box-shadow: 0 -4px 8px rgba(107, 79, 79, 0.3);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-links {
+          gap: 15px;
+        }
+
+        .features-gallery {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .feature-card {
+          width: 90%;
+          max-width: 350px;
+        }
+
+        .video-container {
+          padding: 20px 15px;
+          margin: 40px 0;
+        }
+
+        main h2 {
+          font-size: 1.8rem;
+        }
+
+        .video-container h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -50,8 +268,7 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-          >
-          </iframe>
+          ></iframe>
         </div>
         <p class="video-alternative">
           Jika video tidak muncul, klik
