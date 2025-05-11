@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontak - Sejajar</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+        alert("Pesan anda terkirim. Terima kasih sudah mendaftar!");
+        document.getElementById("registrationForm").reset();
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="images/logo.png" alt="Logo Sejajar" />
+          Sejajar
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="features.html">Fitur</a></li>
+          <li><a href="contact.html" class="active">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="contact-section">
+      <h2>Form Pendaftaran User</h2>
+      <form id="registrationForm" onsubmit="submitForm(event)">
+        <label for="name">Nama Lengkap:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="interest">Minat Belajar:</label>
+        <select id="interest" name="interest" required>
+          <option value="">--Pilih Minat--</option>
+          <option value="sejarah_indonesia">Sejarah Indonesia</option>
+          <option value="sejarah_dunia">Sejarah Dunia</option>
+          <option value="sejarah_kuno">Sejarah Kuno</option>
+          <option value="sejarah_modern">Sejarah Modern</option>
+        </select>
+
+        <button type="submit" class="btn-primary">Submit</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>© 2025 Sejajar.</p>
+    </footer>
+  </body>
+</html>
