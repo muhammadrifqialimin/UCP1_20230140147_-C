@@ -71,6 +71,16 @@ header {
   color: #fff;
 }
 
+/* Mobile Menu Button (Tambahan baru) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #f9f6f2;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 /* Main container */
 main {
   max-width: 1100px;
@@ -102,6 +112,8 @@ footer {
   transition: background-color 0.3s ease;
   display: inline-block;
   text-decoration: none;
+  min-height: 44px; /* Untuk touch target */
+  min-width: 44px;
 }
 
 .btn-primary:hover {
@@ -109,7 +121,7 @@ footer {
   color: #fff;
 }
 
-/* Hero Section (index.html) */
+/* Hero Section */
 .hero-section {
   display: flex;
   align-items: center;
@@ -348,24 +360,6 @@ video {
   background-color: #a67b5b;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-  }
-  .nav-links {
-    gap: 15px;
-  }
-  .features-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-  .team-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 /* POPUP MODAL */
 .promo-modal {
   display: none;
@@ -530,9 +524,175 @@ video {
   text-decoration: underline;
 }
 
-/* Responsive adjustments */
+/* ============================================ */
+/* RESPONSIVE BREAKPOINTS */
+/* ============================================ */
+
+/* Tablet dan HP Landscape */
 @media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .nav-links {
+    margin-top: 15px;
+    gap: 15px;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  /* Features & Team */
+  .features-gallery,
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card,
+  .team-member {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+
+  /* Table */
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 8px 10px;
+  }
+
+  /* Video */
   .video-container h2 {
     font-size: 1.5rem;
   }
+}
+
+/* HP Kecil (Portrait) */
+@media (max-width: 480px) {
+  /* Header */
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  /* Mobile Menu */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 12px;
+  }
+
+  /* Hero */
+  .hero-text h2 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  /* Main Content */
+  main {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  /* Contact Form */
+  .contact-section {
+    padding: 20px 15px;
+  }
+
+  .contact-section input,
+  .contact-section select {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Modal */
+  .promo-modal-content {
+    padding: 20px 15px;
+  }
+
+  .promo-title {
+    font-size: 1.3rem;
+  }
+
+  .promo-message {
+    font-size: 1rem;
+  }
+
+  /* Nonaktifkan animasi hover di mobile */
+  .team-member:hover,
+  .feature-card:hover,
+  .hero-image img:hover {
+    transform: none;
+  }
+}
+
+/* Optimasi untuk perangkat dengan performa rendah */
+@media (max-device-width: 768px) and (orientation: portrait) {
+  .promo-modal {
+    backdrop-filter: none;
+  }
+}
+
+/* Pastikan gambar responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Perbaikan input untuk mobile */
+input[type="email"],
+input[type="tel"]
+
+/* Scroll halus */
+html {
+  scroll-behavior: smooth;
 }
