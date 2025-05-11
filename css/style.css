@@ -71,7 +71,7 @@ header {
   color: #fff;
 }
 
-/* Mobile Menu Button (Tambahan baru) */
+/* Mobile Menu Button */
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -112,7 +112,7 @@ footer {
   transition: background-color 0.3s ease;
   display: inline-block;
   text-decoration: none;
-  min-height: 44px; /* Untuk touch target */
+  min-height: 44px;
   min-width: 44px;
 }
 
@@ -121,13 +121,16 @@ footer {
   color: #fff;
 }
 
-/* Hero Section */
+/* ==================== */
+/* STYLE UNTUK INDEX.HTML */
+/* ==================== */
 .hero-section {
   display: flex;
   align-items: center;
   gap: 50px;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 40px 0;
 }
 
 .hero-text {
@@ -136,15 +139,17 @@ footer {
 
 .hero-text h2 {
   font-family: "Georgia", serif;
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: #6b4f4f;
   margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .hero-text p {
   font-size: 1.25rem;
   margin-bottom: 30px;
   line-height: 1.5;
+  color: #4a3f3f;
 }
 
 .hero-image {
@@ -164,28 +169,98 @@ footer {
   transform: scale(1.05);
 }
 
-/* About Section */
+/* ==================== */
+/* STYLE UNTUK ABOUT.HTML */
+/* ==================== */
+.about-section {
+  padding: 20px;
+}
+
 .about-section h2 {
   text-align: center;
-  margin-bottom: 25px;
+  margin: 30px 0;
   font-family: "Georgia", serif;
   color: #6b4f4f;
+  font-size: 2.2rem;
+  position: relative;
+}
+
+.about-section h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #a67b5b;
+  margin: 15px auto;
+  border-radius: 2px;
 }
 
 .about-section p {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-size: 1.1rem;
   line-height: 1.6;
-  max-width: 900px;
+  text-align: center;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.about-section p strong {
+  color: #6b4f4f;
+  font-weight: 700;
+}
+
+/* Team Section */
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 40px 0 60px 0;
+}
+
+.team-member {
+  background: #f7f2e7;
+  border-radius: 16px;
+  width: 280px;
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(107, 79, 79, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+.team-member img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 4px solid #6b4f4f;
+}
+
+.team-member h3 {
+  color: #6b4f4f;
+  margin-bottom: 8px;
+  font-family: "Georgia", serif;
+  font-size: 1.3rem;
+}
+
+.team-member p {
+  font-size: 0.95rem;
+  color: #4a3f3f;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 /* Table About */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 30px 0 60px 0;
+  margin: 40px 0 60px 0;
   box-shadow: 0 6px 15px rgba(107, 79, 79, 0.15);
   border-radius: 12px;
   overflow: hidden;
@@ -208,65 +283,24 @@ tbody tr:nth-child(even) {
   background-color: #f4eee8;
 }
 
-/* Team Section */
-.team-container {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-bottom: 60px;
-}
-
-.team-member {
-  background: #f7f2e7;
-  border-radius: 16px;
-  width: 220px;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(107, 79, 79, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.team-member:hover {
-  transform: translateY(-10px);
-}
-
-.team-member img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  border: 4px solid #6b4f4f;
-}
-
-.team-member h3 {
-  color: #6b4f4f;
-  margin-bottom: 8px;
-  font-family: "Georgia", serif;
-}
-
-.team-member p {
-  font-size: 0.95rem;
-  color: #4a3f3f;
-}
-
-/* Features Section */
+/* ==================== */
+/* STYLE UNTUK FEATURES.HTML */
+/* ==================== */
 .features-gallery {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 
 .feature-card {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(107, 79, 79, 0.15);
-  width: 280px;
+  width: 320px;
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   transition: transform 0.3s ease;
 }
 
@@ -276,64 +310,115 @@ tbody tr:nth-child(even) {
 
 .feature-card img {
   width: 100%;
+  height: 180px;
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 15px;
 }
 
 .feature-card p {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #6b4f4f;
+  margin-bottom: 0;
 }
 
 /* Video Container */
 .video-container {
   display: flex;
-  justify-content: center;
-  margin-bottom: 60px;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px 0;
+  padding: 30px;
+  background-color: #f7f2e7;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(107, 79, 79, 0.15);
 }
 
-video {
+.video-container h2 {
+  font-family: "Georgia", serif;
+  color: #6b4f4f;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.video-wrapper {
+  position: relative;
   width: 90%;
   max-width: 720px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(107, 79, 79, 0.3);
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  margin-bottom: 15px;
 }
 
-/* Contact Section */
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: none;
+}
+
+.video-alternative {
+  font-size: 1rem;
+  color: #6b4f4f;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.video-alternative a {
+  color: #a67b5b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.video-alternative a:hover {
+  color: #6b4f4f;
+  text-decoration: underline;
+}
+
+/* ==================== */
+/* STYLE UNTUK CONTACT.HTML */
+/* ==================== */
 .contact-section {
   max-width: 500px;
-  margin: auto;
+  margin: 40px auto;
   background: #f7f2e7;
-  padding: 30px 25px;
+  padding: 40px;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(107, 79, 79, 0.2);
 }
 
 .contact-section h2 {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   font-family: "Georgia", serif;
   color: #6b4f4f;
+  font-size: 2rem;
 }
 
 .contact-section label {
   font-weight: 600;
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: #4a3f3f;
+  font-size: 1rem;
 }
 
 .contact-section input[type="text"],
 .contact-section input[type="email"],
 .contact-section select {
   width: 100%;
-  padding: 12px;
+  padding: 12px 15px;
   border-radius: 10px;
   border: 2px solid #6b4f4f;
   font-size: 1rem;
   margin-bottom: 20px;
   transition: border-color 0.3s ease;
+  background: #fff;
 }
 
 .contact-section input[type="text"]:focus,
@@ -354,6 +439,7 @@ video {
   font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
 .contact-section button:hover {
@@ -367,8 +453,8 @@ video {
   z-index: 9999;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(3px);
   justify-content: center;
@@ -420,6 +506,7 @@ video {
   margin-bottom: 12px;
   animation: bounce 1.5s infinite;
 }
+
 @keyframes bounce {
   0%,
   100% {
@@ -441,6 +528,7 @@ video {
   font-size: 1.08rem;
   margin-bottom: 20px;
   color: #fff;
+  line-height: 1.5;
 }
 
 .highlight {
@@ -460,6 +548,8 @@ video {
   cursor: pointer;
   box-shadow: 0 6px 15px rgba(255, 221, 87, 0.18);
   transition: background 0.2s, color 0.2s;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .promo-btn:hover {
@@ -467,66 +557,9 @@ video {
   color: #4a3f3f;
 }
 
-/* Video Container Styles */
-.video-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 40px 0;
-  padding: 20px;
-  background-color: #f7f2e7;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(107, 79, 79, 0.15);
-}
-
-.video-container h2 {
-  font-family: "Georgia", serif;
-  color: #6b4f4f;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  text-align: center;
-}
-
-.video-wrapper {
-  position: relative;
-  width: 90%;
-  max-width: 720px;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  margin-bottom: 15px;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  border: none;
-}
-
-.video-alternative {
-  font-size: 1rem;
-  color: #6b4f4f;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.video-alternative a {
-  color: #a67b5b;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.video-alternative a:hover {
-  color: #6b4f4f;
-  text-decoration: underline;
-}
-
-/* ============================================ */
+/* ==================== */
 /* RESPONSIVE BREAKPOINTS */
-/* ============================================ */
+/* ==================== */
 
 /* Tablet dan HP Landscape */
 @media (max-width: 768px) {
@@ -546,6 +579,7 @@ video {
     flex-direction: column;
     text-align: center;
     gap: 30px;
+    margin: 20px 0;
   }
 
   .hero-text h2 {
@@ -581,8 +615,18 @@ video {
   }
 
   /* Video */
+  .video-container {
+    margin: 40px 0;
+    padding: 20px;
+  }
+
   .video-container h2 {
     font-size: 1.5rem;
+  }
+
+  /* Contact Form */
+  .contact-section {
+    padding: 30px;
   }
 }
 
@@ -687,10 +731,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-/* Perbaikan input untuk mobile */
-input[type="email"],
-input[type="tel"]
 
 /* Scroll halus */
 html {
